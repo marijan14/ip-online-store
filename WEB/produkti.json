@@ -1,0 +1,146 @@
+[
+	{
+		"ime": "BlackBery Z10",
+		"cena": "33 990 MKD",
+		"slika": "sliki/BlackBerry-Z10.png",
+		"kategorija": "Мобилни Телефони"
+	},
+	{
+		"ime": "The Hobbit and the Lord of the Rings",
+		"cena": "1165 MKD",
+		"slika": "sliki/hobit_LotR.jpg",
+		"kategorija": "Книги"
+	},
+	{
+		"ime": "DELL Inspiron 5547",
+		"cena": "54 990 MKD",
+		"slika": "sliki/dell.jpg",
+		"kategorija": "Лаптопи"
+	},
+	{
+		"ime": "Men's Jacket",
+		"cena": "2 780 MKD",
+		"slika": "sliki/jacket.jpg",
+		"kategorija": "Машка Облека"
+	},
+	{
+		"ime": "Ebel",
+		"cena": "121 870 MKD",
+		"slika": "sliki/ebel.jpg",
+		"kategorija": "Машки Часовници"
+	},
+	{
+		"ime": "iPhone 6 PLUS 16GB Gold",
+		"cena": "48 990 MKD",
+		"slika": "sliki/iPhone_6_PLUS_16GB_Gold.png",
+		"kategorija": "Мобилни Телефони"
+	},
+	{
+		"ime": "To Kill a Mockingbird",
+		"cena": "270 MKD",
+		"slika": "sliki/mockingbird.jpg",
+		"kategorija": "Книги"
+	},
+	{
+		"ime": "Sony Xperia U",
+		"cena": "13 990 MKD",
+		"slika": "sliki/sony-xperia-u.png",
+		"kategorija": "Мобилни Телефони"
+	},
+	{
+		"ime": "ACER VN7-791G",
+		"cena": "59 990 MKD",
+		"slika": "sliki/acer.jpg",
+		"kategorija": "Лаптопи"
+	},
+	{
+		"ime": "Fifty Shades (Trilogy)",
+		"cena": "1500 MKD",
+		"slika": "sliki/fifty_shades.jpg",
+		"kategorija": "Книги"
+	},
+	{
+		"ime": "Sony Xperia Z Ultra",
+		"cena": "38 990 MKD",
+		"slika": "sliki/Sony_Xperia Z_Ultra.png",
+		"kategorija": "Мобилни Телефони"
+	},
+	{
+		"ime": "Versace",
+		"cena": "35 500 MKD",
+		"slika": "sliki/versace.jpg",
+		"kategorija": "Машки Часовници"
+	},
+	{
+		"ime": "Samsung GALAXY Note",
+		"cena": "34 990 MKD",
+		"slika": "sliki/galaxy-note.png",
+		"kategorija": "Мобилни Телефони"
+	},
+	{
+		"ime": "Wayfarer Sunglasses",
+		"cena": "300 MKD",
+		"slika": "sliki/wayfarer.jpg",
+		"kategorija": "Наочари за Сонце"
+	},
+	{
+		"ime": "Harry Potter (Complete)",
+		"cena": "2710 MKD",
+		"slika": "sliki/harry_poter.jpg",
+		"kategorija": "Книги"
+	},
+	{
+		"ime": "ASUS G751JY-T7064D",
+		"cena": "87 990 MKD",
+		"slika": "sliki/asus.jpg",
+		"kategorija": "Лаптопи"
+	},
+	{
+		"ime": "Gucci",
+		"cena": "40 500 MKD",
+		"slika": "sliki/gucci.jpg",
+		"kategorija": "Машки Часовници"
+	},
+	{
+		"ime": "LENOVO IP Y50-70",
+		"cena": "48 990 MKD",
+		"slika": "sliki/lenovo.jpg",
+		"kategorija": "Лаптопи"
+	},
+	{
+		"ime": "Men's Trousers",
+		"cena": "1 100 MKD",
+		"slika": "sliki/pants.jpg",
+		"kategorija": "Машка Облека"
+	},
+	{
+		"ime": "Zodiac",
+		"cena": "69 800 MKD",
+		"slika": "sliki/zodiac.jpg",
+		"kategorija": "Машки Часовници"
+	},
+	{
+		"ime": "Point of View",
+		"cena": "9 990 MKD",
+		"slika": "sliki/point_of_view.jpg",
+		"kategorija": "Таблети"
+	},
+	{
+		"ime": "Ray-Ban RB2132",
+		"cena": "5 440 MKD",
+		"slika": "sliki/ray-ban.jpg",
+		"kategorija": "Наочари за Сонце"
+	},
+	{
+		"ime": "TOSHIBA Encore WT8-A-102",
+		"cena": "17 990 MKD",
+		"slika": "sliki/toshiba.jpg",
+		"kategorija": "Таблети"
+	},
+	{
+		"ime": "Men's Pullover",
+		"cena": "1 460 MKD",
+		"slika": "sliki/shirt.jpg",
+		"kategorija": "Машка Облека"
+	}
+]
