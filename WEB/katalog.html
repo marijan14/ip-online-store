@@ -1,0 +1,201 @@
+<html>
+	<head>
+		<title>Каталог</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/produkti.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/orbit-1.2.3.css">
+		<style type="text/css">
+			footer{
+				background-color: rgb(55, 52, 52);
+				color: white;
+				margin-bottom: 0px;
+				text-align: center;
+				text-shadow: 1px 1px #000;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<section id="navigacija">
+				<ul class="navigacija-linkovi">
+					<li><a href="pocetna.html">е-Продавница</a></li>
+					<li><input id="search" name="query" type="search" results="5" placeholder="Пребарувај..."></li>
+					<li><a href="pocetna.html">Почетна</a></li>
+					<li><a href="katalog.html">Каталог</a></li>
+					<li><a href="kosnicka.html">Кошничка</a></li>
+					<li><a href="kontakt.html">Контакт</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<div id="main-content">		
+			<label><b>Одберете категорија: </b></label>
+			<select>
+				<option>Филмови</option>
+				<option>Лаптопи</option>
+				<option>Таблети</option>
+				<option>Софтвер</option>
+				<option>Книги</option>
+				<option>Спорт</option>
+				<option>Видео игри</option>
+			</select>
+			<div id="info">
+			</div>
+		</div>
+
+		<footer>
+			Проектот е изработен од: Маријан Гајдов<br><br>
+			Индекс: <b>131165</b><br><br>
+			Јануарни 2015<br><br>
+			marijan.gajdov@hotmail.com<br><br>
+			<span>@ 2015 All rights reserved.</span>
+		</footer>
+
+
+		<script>
+			function prikazi(niza){
+				$("#info").html("");
+				$(niza).each(function(index,item){
+					var $div = $("<div></div>");
+					$div.attr("class","wrapper");
+					$div.append("<b>" + item.ime +"</b>");
+					var $slika = $("<img/>");
+					$slika.attr("src","Sliki/" + item.ime + ".jpg");
+					$div.append($slika);
+					$div.append("<b>Цена: " + item.cena +" МКД</b>");
+
+					var $kosnicka = $("<button></button>");
+					$kosnicka.attr("class","kosnicka");
+					if(!item.kosnicka){
+						$kosnicka.html("Додади го во кошничката");
+						$kosnicka.addClass("add");
+					}
+					else{
+						$kosnicka.html("Избриши го од кошничката");
+						$kosnicka.addClass("remove");
+					}
+					$div.append($kosnicka);
+
+					var $wishlist = $("<button></button>");
+					$wishlist.attr("class","wishlist");
+					if(!item.wishlist){
+						$wishlist.html("Додади го во wishlist");
+						$wishlist.addClass("add");
+					}
+					else{
+						$wishlist.html("Избриши го од wishlist");
+						$wishlist.addClass("remove");
+					}
+					$div.append($wishlist);
+
+					$("#info").append($div);
+				});
+			}
+			function zaKosnicka(tekst){
+				var niza = filmovi.concat(laptopi).concat(tableti).concat(softver).concat(knigi).concat(sport).concat(videoIgri);
+				$(niza).each(function(index,item){
+					if(item.ime == tekst){
+						if(item.kosnicka == true){
+							item.kosnicka = false;
+							var i = najdiIndeks(kosnicka,item.ime);
+							kosnicka.splice(i,1);
+						}
+						else{
+							item.kosnicka = true;
+							var temp = {ime : item.ime, cena : item.cena, kosnicka : item.kosnicka, wishlist : item.wishlist, kol : 1};
+							kosnicka.push(temp);
+						}
+					}
+				});
+			}
+			function zaWishlist(tekst){
+				var niza = filmovi.concat(laptopi).concat(tableti).concat(softver).concat(knigi).concat(sport).concat(videoIgri);
+				$(niza).each(function(index,item){
+					if(item.ime == tekst){
+						if(item.wishlist == false){
+							item.wishlist = true;
+							wishlist.push(item);
+						}else{
+							item.wishlist = false;
+							var i = najdiIndeks(wishlist,item.ime);
+							wishlist.splice(i,1);
+						}
+					}
+				});
+			}
+			function promeni(){
+				var niza = filmovi.concat(laptopi).concat(tableti).concat(softver).concat(knigi).concat(sport).concat(videoIgri);
+				$(niza).each(function(index,item){
+					$(kosnicka).each(function(index1,item1){
+						if(item.ime == item1.ime)
+							item.kosnicka = true;
+					});
+					$(wishlist).each(function(index1,item1){
+						if(item.ime == item1.ime)
+							item.wishlist = true;
+					});
+				});
+			}
+			function momentalnaLista(i){
+				if(i == 0)
+					return filmovi;
+				else if(i == 1)
+					return laptopi;
+				else if(i == 2)
+					return tableti;
+				else if(i == 3)
+					return softver;
+				else if(i == 4)
+					return knigi;
+				else if(i == 5)
+					return sport;
+				else if(i == 6)
+					return videoIgri;
+			}
+			$(function(){
+				if($.cookie("kosnicka") && $.cookie("kosnicka") != "null" )
+					kosnicka = JSON.parse($.cookie("kosnicka"));
+				if($.cookie("wishlist") && $.cookie("wishlist") != "null" )
+					wishlist = JSON.parse($.cookie("wishlist"));
+				promeni();
+				prikazi(filmovi);
+				$("select").change(function(){
+					var i = $(this).find("option:selected").index();
+					var niza = 	momentalnaLista(i);
+					prikazi(niza);
+				});
+				$(document).on("click",".kosnicka",function(){
+					var tekst = $(this).parent().find("b").html();
+					zaKosnicka(tekst);
+					var i = $("select").find("option:selected").index();
+					var niza = 	momentalnaLista(i);
+					prikazi(niza);
+				});
+
+				$(document).on("click",".wishlist",function(){
+					var tekst = $(this).parent().find("b").html();
+					zaWishlist(tekst);
+					var i = $("select").find("option:selected").index();
+					var niza = 	momentalnaLista(i);
+					prikazi(niza);
+				});
+			});
+			$(window).on('beforeunload', function(){
+			 	var date = new Date();
+			 	date.setTime(date.getTime() + (30*60*1000));
+			 	$.cookie("kosnicka",JSON.stringify(kosnicka),{
+			 		expires : date,
+			 		path : '/'
+			 	});
+			 	$.cookie("wishlist",JSON.stringify(wishlist),{
+			 		expires : date,
+			 		path : '/'
+			 	});
+		  	});
+		</script>
+	</body>
+</html>

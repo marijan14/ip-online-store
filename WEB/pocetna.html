@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>Почетна</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<!-- Извор: http://zurb.com/playground/orbit-jquery-image-slider -->
+		<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/funkcii.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/orbit-1.2.3.css">
+		<link rel="stylesheet" href="js/jquery-ui.min.css">
+		<style type="text/css">
+			footer {
+				background-color: rgb(55, 52, 52);
+				color: white;
+				margin-bottom: 0px;
+				text-align: center;
+				text-shadow: 1px 1px #000;
+			}
+			.ui-tooltip {
+				width: 210px;
+				padding: 10px 20px;
+				color: white;
+				border-radius: 20px;
+				font: bold 14px "Helvetica Neue", Sans-Serif;
+				text-transform: uppercase;
+				box-shadow: 0 0 7px black;
+				background-color: gray;
+				border: 2px solid black;
+			}
+			.ui-autocomplete {
+				width: 200px !important;
+				z-index: 9999;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<section id="navigacija">
+				<ul class="navigacija-linkovi">
+					<li><a href="pocetna.html">е-Продавница</a></li>
+					<li><input id="search" name="query" type="search" placeholder="Пребарувај..."></li>
+					<li><a href="pocetna.html">Почетна</a></li>
+					<li><a href="katalog.html">Каталог</a></li>
+					<li><a href="kosnicka.html">Кошничка</a></li>
+					<li><a href="kontakt.html">Контакт</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<div id="poraka">
+			<span><b><i>Артиклот е успешно додаен во кошничката</i></b></span>
+		</div>
+
+		<div class="sodrzina">
+			<div id="featured">
+				<img src="sliki/new_tech.jpg" />
+				<img src="sliki/tablets.jpg" />
+				<img src="sliki/mens_fashion.jpg" />
+				<img src="sliki/zte-promo.jpg" />
+				<img src="sliki/tech2.jpg" />
+			</div>
+		</div>
+
+		<div id="produkti">
+			
+		</div>
+
+		<footer>
+			Проектот е изработен од: Маријан Гајдов<br><br>
+			Индекс: <b>131165</b><br><br>
+			Јануарни 2015<br><br>
+			marijan.gajdov@hotmail.com<br><br>
+			<span>@ 2015 All rights reserved.</span>
+		</footer>
+	</body>
+
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('#featured').orbit({
+				timer: true
+			});
+		});
+
+		var pZelbi = [], pKosnicka = [];
+		var produkti = [];
+		var iminja = [];
+
+		$(function(){
+			$.ajax({
+				url: "produkti.json",
+				dataType: "json",
+				success: function(data){
+					$(data).each(function(i, item){
+						var text = '<div class="podatoci" title="' + item.ime + '" kategorija="' + item.kategorija + '">' +
+										/*'<span>' + item.ime + '</span>' + '<br />' +*/
+										'<img class="naslovna" src="' + item.slika + '" />' + '<br />' +
+										'<span> Цена: ' + item.cena + '<span>' +
+										'<ul>' +
+											'<li class="add"><a href="#addToCart"><img class="pics" src="sliki/add-to-cart.png" /></a></li>' + '<br />' +
+											'<li class="add"><a href="#addToWhishlist"><img class="pics" src="sliki/add-to-whishlist.JPG" /></a></li>' +
+										'</ul>' +
+									'</div>';
+						$("#produkti").append(text);
+						iminja.push(item.ime);
+					});
+				}
+			});
+		});
+
+		$(document).tooltip({
+			track: true
+		});
+
+		$('#search').autocomplete({
+			source: iminja
+		});
+	</script>
+</html>

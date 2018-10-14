@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Контакт</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/orbit.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+			@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+			footer{
+				background-color: rgb(55, 52, 52);
+				color: white;
+				margin-bottom: 0px;
+				bottom: 0;
+				text-align: center;
+				text-shadow: 1px 1px #000;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<section id="navigacija">
+				<ul class="navigacija-linkovi">
+					<li><a href="pocetna.html">е-Продавница</a></li>
+					<li><input id="search" name="query" type="search" results="5" placeholder="Пребарувај..."></li>
+					<li><a href="pocetna.html">Почетна</a></li>
+					<li><a href="katalog.html">Каталог</a></li>
+					<li><a href="kosnicka.html">Кошничка</a></li>
+					<li><a href="kontakt.html">Контакт</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<div id="poraka">
+			<span><b><i>Артиклот е успешно додаен во кошничката</i></b></span>
+		</div>
+
+		<br><br>
+
+		<div style="height: 395px;">
+			<section style="float: left" id="kontakt">
+				<form action="MAILTO:marijan.gajdovy@gmail.com" method="GET" enctype="text/plain">
+					<div class="div-kontakt">
+						<label for="ime">Име:</label><br>
+						<input name="ime" type="text" value="" class="i-kontakt" size="50">
+					</div>
+					<div class="div-kontakt">
+						<label for="email">Е-маил адреса:</label><br>
+						<input name="email" type="email" value="" class="i-kontakt" size="50">
+					</div>
+					<div class="div-kontakt">
+						<label for="poraka">Остави порака:</label><br>
+						<textarea name="poraka" rows="15" cols="67" id="i-poraka"></textarea><br>
+					</div>
+					<button id="btn">Испрати</button>
+				</form>
+			</section>
+
+			<section style="float: right" id="info">
+				<p>
+					Адреса: &nbsp;ул. Андон Шурков 12-3/5<br><br>
+					Град: &nbsp;&nbsp;&nbsp;Велес<br><br>
+					Телефон: 075 284-753<br><br>
+					Факс: &nbsp;&nbsp;&nbsp;21354<br><br>
+					E-mail: &nbsp;&nbsp;info@imenastranata.com
+				</p>
+			</section>
+		</div>
+
+		<footer>
+			Проектот е изработен од: Маријан Гајдов<br><br>
+			Индекс: <b>131165</b><br><br>
+			Јануарни 2015<br><br>
+			marijan.gajdov@hotmail.com<br><br>
+			@ 2015 All rights reserved.
+		</footer>
+	</body>
+</html>
