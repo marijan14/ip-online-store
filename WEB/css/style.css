@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	background-color: #888;
+}
+body{
+	width: 1096px;
+	margin-left: 100px;
+}
+#navigacija{
+	background-color: rgb(55, 52, 52);
+	height: 60px;
+}
+.navigacija-linkovi, li{
+	display: inline-block;
+}
+.navigacija-linkovi li{
+	padding: 15px;
+	border-right: 2px solid black;
+}
+.navigacija-linkovi a {
+	text-decoration: none;
+	color: grey;
+	padding: 15px;
+}
+.navigacija-linkovi{
+	border-bottom: 2px solid black;
+}
+.navigacija-linkovi li:nth-child(6){
+	border: none !important;
+}
+#search{
+	padding: 5px;
+	width: 400px;
+}
+#search:after{
+	content: url(sliki/lupa.jpg);
+}
+a:hover{
+	color: white;
+	cursor: pointer;
+}
+#poraka{
+	background-color: pink;
+	width: 320px;
+	padding: 40px;
+	border-radius: 15px;
+	left: 450px;
+	position: relative;
+	border: 1px solid black;
+	box-shadow: 10px 10px 10px #666;
+	display: none;
+}
+.i-kontakt{
+	padding-top: 5px;
+}
+#info{
+	margin-top: 35px;
+	padding: 60px;
+	background-color: #A9A9A9;
+}
+#info p{
+	font: 15px 'Roboto Slab' serif;
+	word-spacing: 5px;
+}
+#btn{
+	padding: 3px;
+}
+.sodrzina{
+	margin-top: 50px;
+	margin-left: 290px;
+}
+#kosnica{
+	float: right;
+}
+#kosnica img{
+	width: 50px;
+	height: 50px;
+}
+#koshnica{
+	height: 500px;
+	margin-top: 20px;
+}
+#koshnica h1{
+	margin-left: 120px;
+	margin-bottom: 30px;
+}
+#cart, #zelbi{
+	width: 548px;
+	height: 500px;
+}
+#cart{
+	border-right: 1px solid black;
+}
+.naslovna{
+	width: 137px;
+	height: 220px;
+}
+#produkti div{
+	display: inline-block;
+}
+.podatoci{
+	padding: 30px;
+	margin-left: 20px;
+}
+.pics{
+	width: 130px;
+	height: 26px;
+}
+#button{
+	padding: 50px;
+}
+#main-content{
+	margin : 10px;
+	padding : 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+#info h1{
+	margin : 5px 0px 10px 150px;
+}
+.wrapper{
+	display : inline-block;
+	padding : 20px;
+	border : 1px solid black;
+	border-radius: 10px;
+	width : 200px;
+	height : 300px;
+	margin: 10px;
+}
+.wrapper b:first-child{
+	height : 44px;
+}
+.wrapper b{
+	display : block;
+	font-size : 18px;
+	position:relative;
+}
+.wrapper img{
+	width : 180px;
+	height : 180px;
+}
+.wrapper button{
+	border-radius : 10px;
+	display : inline-block;
+	margin-top:5px;
+	width : 100%;
+}
+.add{
+	background : lightgreen!important;
+	color : white;
+}
+.remove{
+	background : red!important;
+	color : white;
+}
+.naracka{
+	background : lightgreen;
+	padding : 5px 50px;;
+	border-radius : 15px;
+	font-size: 20px;
+	font-weight : bold;
+	color : white;
+	margin-left : 30px;
+}
